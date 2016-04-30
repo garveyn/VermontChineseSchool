@@ -32,11 +32,11 @@ void welcome();
 void mainMenu();
 char getChoice();
 void courseMenu();
-bool processCourseChoice(char choice, Course* courses, LinkedList teachers, int numberOfCourses);
+bool processCourseChoice(char choice, Course* courses, LinkedList& teachers, int numberOfCourses);
 void teacherMenu();
 bool processTeacherChoice(char choice, LinkedList& teachers);
 void studentMenu();
-bool processStudentChoice(char choice, Course* courses, LinkedList teachers, int numberOfCourses);
+bool processStudentChoice(char choice, Course* courses, LinkedList& teachers, int numberOfCourses);
 
 void loadTeacher(LinkedList& teachers);
 int getNumberOfCourses();
@@ -52,14 +52,14 @@ void storeUser(string users[]);
 
 //courses functions
 
-void addCourse(Course* courses, LinkedList teachers, int &courseInArray);
+void addCourse(Course* courses, LinkedList& teachers, int &courseInArray);
 Course searchCourse(Course* courses, int coursesInArray);
 void removeCourse(Course courseToRemove, Course* courses, int &coursesInArray);
-void updateCourse(Course courseToUpdate, Course* courses, LinkedList teachers, int coursesInArray);
+void updateCourse(Course courseToUpdate, Course* courses, LinkedList& teachers, int coursesInArray);
 Course* shrinkCourseArray(Course* courses, int numberOfCourses);
 Course* expandCourseArray(Course* courses, int numberOfCourses);
 
-void snowDay(Course* courses, int coursesInArray, LinkedList teachers);
+void snowDay(Course* courses, int coursesInArray, LinkedList& teachers);
 
 void pause();
 void clearScreen();
