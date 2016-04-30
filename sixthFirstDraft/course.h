@@ -42,7 +42,7 @@ public:
 	Student searchStudentID(string ID);
 	Student updateStudent();
 
-	void displayAllStudents();
+	void displayAllStudents(); // test
 
 	bool operator==(Course rhs);
 	bool operator==(string rhs);
