@@ -675,7 +675,8 @@ Course* expandCourseArray(Course* courses, int numberOfCourses)
 
 void snowDay(Course* courses, int coursesInArray, LinkedList& teachers)
 {
-	
+	// help me
+
 }
 
 void pause()
