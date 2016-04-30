@@ -123,46 +123,72 @@ bool processCourseChoice(char choice, Course* courses, LinkedList teachers, int 
 }
 
 /*
-Author: Michael English - edited by Talon Birns
+Author: Michael English - edited by Talon Birns and Zynab Makki
 */
 void teacherMenu()
 {
-	cout << endl;
-	cout << "Search Teacher: S" << endl;
-	cout << "Back to main menu: B" << endl;
-	cout << "Log out: L" << endl;
-	cout << "Shut down: Q" << endl;
-	cout << endl;
-	//still need add, remove, update
+   cout << endl;
+   cout << "Search Teacher: S" << endl;
+   cout << "Add Teacher: A" << endl;
+   cout << "Remove Teacher: R" << endl;
+   cout << "Update Teacher: U" << endl;
+   cout << "Back to main menu: B" << endl;
+   cout << "Log out: L" << endl;
+   cout << "Shut down: Q" << endl;
+   cout << endl;
+
 }
 
 /*
-Author: Michael English - edited by Talon Birns
+Author: Michael English - edited by Talon Birns and Zynab Makki
 */
 bool processTeacherChoice(char choice, LinkedList& teachers)
 {
-	string tempName;
-	switch (choice)
-	{
-	case 'S':
-	case 's':
-		cout << "What is the name of the teacher you wish to search? " << endl;
-		getline(cin, tempName);
-		teachers.searchPrintTeacherName(tempName);
-		break;
-	case 'B':
-	case 'b':
-	case 'L':
-	case 'l':
-	case 'Q':
-	case 'q':
-		return false;
-	default:
-		displayMessage(INVALID_SELECTION);
-		break;
-	}
+   string tempName, tempID;
+   switch (choice)
+   {
+   case 'S':
+   case 's':
+      cout << "What is the name of the teacher you wish to search? " << endl;
+      cin >> tempName;
+      teachers.searchPrintTeacherName(tempName);
+      break;
+   case 'A':
+   case 'a':
+      //add teacher
+   case 'R':
+   case 'r':
+      cout << "What is the name of the teacher you'd like to remove? " << endl;
+      cin >> tempName;
+      teachers.searchPrintTeacherName(tempName);
+      cout << "Please enter the ID of the teacher you'd like to remove. " << endl;
+      //need to validate
+      cin >> tempID;
+      teachers.removeTeacher(teachers.getTeacherFromIndex(teachers.searchGetListIndex(tempID)));
+      break;
+   case 'U':
+   case 'u':
+      cout << "What is the name of the teacher you'd like to update? " << endl;
+      cin >> tempName;
+      teachers.searchPrintTeacherName(tempName);
+      cout << "Please enter the ID of the teacher you'd like to update. " << endl;
+      //need to validate
+      cin >> tempID;
+      teachers.updateTeacher(teachers.getTeacherFromIndex(teachers.searchGetListIndex(tempID)));
+      break;
+   case 'B':
+   case 'b':
+   case 'L':
+   case 'l':
+   case 'Q':
+   case 'q':
+      return false;
+   default:
+      displayMessage(INVALID_SELECTION);
+      break;
+   }
 
-	return true;
+   return true;
 }
 
 /*
