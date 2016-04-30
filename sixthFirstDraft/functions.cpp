@@ -82,7 +82,7 @@ void courseMenu()
 /*
 Author: Michael English
 */
-bool processCourseChoice(char choice, Course* courses, LinkedList teachers, int numberOfCourses)
+bool processCourseChoice(char choice, Course* courses, LinkedList& teachers, int numberOfCourses)
 {
 	Course tmp;
 	switch (choice)
@@ -206,7 +206,7 @@ void studentMenu()
 	cout << endl;
 }
 
-bool processStudentChoice(char choice, Course *courses, LinkedList teachers, int numberOfCourses)
+bool processStudentChoice(char choice, Course *courses, LinkedList& teachers, int numberOfCourses)
 {
 	string tempName;
 
@@ -520,7 +520,7 @@ void storeUser(string users[])
 	fout.close();
 }
 
-void addCourse(Course * courses, LinkedList teachers, int & courseInArray)
+void addCourse(Course * courses, LinkedList& teachers, int & courseInArray)
 {
 	Course tempCourse;
 	Student tempStudent, tempStudentArr[STUDENTS_PER_COURSE];
@@ -593,7 +593,7 @@ void removeCourse(Course courseToRemove, Course * courses, int &coursesInArray)
 	}
 }
 
-void updateCourse(Course courseToUpdate, Course* courses, LinkedList teachers, int coursesInArray)
+void updateCourse(Course courseToUpdate, Course* courses, LinkedList& teachers, int coursesInArray)
 {
 	string originalName, newValue, junk;
 	bool continueOn;
@@ -673,7 +673,7 @@ Course* expandCourseArray(Course* courses, int numberOfCourses)
 	return newCourses;
 }
 
-void snowDay(Course* courses, int coursesInArray, LinkedList teachers)
+void snowDay(Course* courses, int coursesInArray, LinkedList& teachers)
 {
 	
 }
