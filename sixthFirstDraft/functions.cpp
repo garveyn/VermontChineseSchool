@@ -498,20 +498,18 @@ void addCourse(Course * courses, LinkedList teachers, int & courseInArray)
 {
 	Course tempCourse;
 	Student tempStudent, tempStudentArr[STUDENTS_PER_COURSE];
+	string teacher;
 
 	do
 	{
-		cout << "Please enter the information for the Course you would like to add." << endl;
-		cin >> tempCourse; //gets the course information
-	} while (!teachers.doesTeacherExist(tempCourse.getTeacher()));
+		cout << endl << "Please enter the teacher's name: ";
+		getline(cin, teacher);
 
-	cout << "Please enter the student information for all students in the class." << endl;
+	} while (!teachers.doesTeacherExist(teacher));
 
-	for (int i = 0; i < tempCourse.getStudentCount(); i++) //gets the number of students for the class
-	{
-		cin >> tempStudent;
-		tempStudentArr[i] = tempStudent;
-	}
+	tempCourse.setTeacher(teacher);
+	cout << "Please enter the information for the Course you would like to add." << endl;
+	cin >> tempCourse; //gets the course information
 
 	tempCourse.setArrayOfStudents(tempStudentArr); //sets the temporary array of students to mStudents
 
@@ -526,6 +524,7 @@ void addCourse(Course * courses, LinkedList teachers, int & courseInArray)
 			courses[j] = tempCourse; // sets the new course to the last position in the array.
 		}
 	}
+
 
 }
 
