@@ -327,3 +327,16 @@ void LinkedList::updateTeacherSubStatus(Teacher teacher, bool isSub)//name cours
 
 
 }
+
+void LinkedList::printAllTeachers()
+{
+   Node *currentNode;
+
+   currentNode = mHead;
+
+   while (currentNode != NULL)
+   {
+      cout << currentNode->mTeacher;
+      currentNode = currentNode->mNext;
+   }
+}

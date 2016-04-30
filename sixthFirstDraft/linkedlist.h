@@ -42,7 +42,8 @@ public:
    void updateTeacherPhone(Teacher teacher, string phoneNum);
    void updateTeacherEmail(Teacher teacher, string Email);
    void updateTeacherSubStatus(Teacher teacher, bool isSub);
-   
+   void printAllTeachers();
+
 
 
   };
