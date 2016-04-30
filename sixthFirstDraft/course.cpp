@@ -353,7 +353,7 @@ Student Course::updateStudent()
 }
 
 
-void Course::updateStudentBackend(char choice, Student studentToModify)
+void Course::updateStudentBackend(char choice, Student& studentToModify)
 {
 	string newValue;
 	emergencyContact tmp;

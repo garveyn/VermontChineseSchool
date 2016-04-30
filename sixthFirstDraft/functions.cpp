@@ -557,7 +557,7 @@ void addCourse(Course * courses, LinkedList teachers, int & courseInArray)
 
 Course searchCourse(Course * courses, int coursesInArray)
 {
-	cout << "What is the course name you would like to seach? " << endl;
+	cout << "What is the course name you would like to search? " << endl;
 	string answer;
 	Course temp;
 	getline(cin, answer);

@@ -17,7 +17,7 @@ class Course
 	int mStudentCount;
 	Student mStudents[STUDENTS_PER_COURSE];
 
-	void updateStudentBackend(char choice, Student studentToModify);
+	void updateStudentBackend(char choice, Student& studentToModify);
 
 public:
 
